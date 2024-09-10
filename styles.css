@@ -1,0 +1,545 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    overflow-x: hidden;
+}
+
+/* Container Styles */
+.container {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Estilos para el contenedor del encabezado */
+.header-container {
+    position: relative;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    min-height: 500px; /* Asegura una altura mínima si es necesario */
+    overflow: hidden;
+    display: flex;               /* Añadido: Para centrar el contenido */
+    justify-content: center;     /* Añadido: Para centrar horizontalmente */
+    align-items: center;         /* Añadido: Para centrar verticalmente */
+}
+
+/* Fondo de la imagen */
+.header-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Imagenes/fondo.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Imagen detrás del texto */
+}
+
+/* Asegúrate de que el contenedor de texto se encuentra sobre la imagen */
+.container {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;               /* Añadido: Para usar flexbox */
+    flex-direction: column;      /* Añadido: Para apilar elementos verticalmente */
+    align-items: center;         /* Añadido: Para centrar horizontalmente */
+    justify-content: center;     /* Añadido: Para centrar verticalmente */
+}
+
+
+/* Title and Subtitle Styles */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    animation: floatTitle 4s ease-in-out infinite;
+    position: relative;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 10px;
+    animation: floatSubtitle 4s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatSubtitle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Button Styles */
+.button-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente los botones */
+    gap: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4caf50; /* Verde Pastel */
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    background-color: #4caf50; /* Verde más oscuro al pasar el cursor */
+    filter: brightness(1.2); /* Ilumina el botón al pasar el cursor */
+}
+
+/* Section Styles */
+.section:nth-of-type(odd) {
+    background-color: #a0eaa3; /* Verde pastel claro */
+}
+
+/* Secciones pares con imagen de fondo */
+.section:nth-of-type(even) {
+    background-image: url('Imagenes/fondo.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir el fondo */
+    background-position: center; /* Centra la imagen en la sección */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #000; /* Mantiene el color del texto negro */
+    position: relative; /* Necesario para el overlay */
+}
+
+/* Opcional: agregar un overlay para mejorar la legibilidad del texto */
+.section:nth-of-type(even)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 139, 72, 0.3); /* Fondo negro semi-translúcido para contraste */
+    z-index: 0; /* Coloca el overlay debajo del texto */
+}
+
+.section:nth-of-type(even) .content {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el overlay */
+}
+
+/* Cambios al pasar el cursor sobre las secciones */
+.section:nth-of-type(even):hover {
+    background-color: #4caf50; /* Verde pastel más intenso al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al pasar el cursor */
+}
+
+/* Estilos para la imagen decorativa */
+.decorative-image {
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.decorative-image img {
+    width: 200px; /* Tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
+}
+
+/* Estilos específicos para el texto dentro de las secciones */
+.section h2, .section p {
+    color: #000; /* Mantiene el color del texto negro */
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Línea separadora entre secciones */
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    background-color: #4caf50; /* Verde pastel más intenso al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+
+/* Sección CV - Estilo específico */
+#cv {
+    padding: 120px 20px; /* Aumenta el padding para hacer el contenedor más alto */
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff; /* Fondo blanco para la sección */
+    text-align: center; /* Centra el texto en el contenedor */
+    height: 600px; /* Aumenta la altura del contenedor para un mejor efecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el contenedor de perfil */
+.profile-header {
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté sobre el fondo */
+}
+
+/* Estilo para el texto */
+.profile-info h1 {
+    font-size: 4rem; /* Ajusta el tamaño del nombre si es necesario */
+    margin: 0;
+}
+
+.profile-info h2 {
+    font-size: 1.2rem; /* Ajusta el tamaño del subtítulo si es necesario */
+    margin: 0;
+}
+
+/* Estilos para la sección CV */
+#cv {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px; /* Aumenta el padding para que la sección sea más alta */
+    height: 500px; /* Ajusta la altura según lo necesites */
+    text-align: center; /* Centra el texto */
+    background-color: #a0eaa3; /* Fondo blanco por defecto */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Fondo de la imagen */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Imagenes/Retraro.png'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Desenfoque inicial de la imagen */
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.5s ease, filter 0.5s ease; /* Transiciones suaves */
+    z-index: -1; /* Asegura que la imagen esté detrás del texto */
+}
+
+/* Estilo para el texto */
+.profile-header {
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté en frente */
+}
+
+.profile-info h1 {
+    font-size: 3rem; /* Ajusta el tamaño del nombre */
+    margin: 0;
+}
+
+.profile-info h2 {
+    font-size: 1.2rem; /* Ajusta el tamaño del subtítulo */
+    margin: 0;
+}
+
+/* Cambios cuando se pasa el cursor sobre la sección */
+#cv:hover {
+    background-color: transparent; /* Elimina el fondo blanco al pasar el cursor */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al pasar el cursor */
+}
+
+#cv:hover .background-image {
+    opacity: 1; /* Muestra la imagen al pasar el cursor */
+    filter: blur(0); /* Elimina el desenfoque al pasar el cursor */
+}
+
+/* Estilos para la sección de contacto */
+#contact {
+    padding: 20px;
+    background-image: url(Imagenes/Ilustraciones\ varias.png);
+    display: flex;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+
+}
+
+/* Sección de Contacto - Centrar solo el contenedor */
+#contact .contact-item {
+    background-color: #ffffff;
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 50px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+    border: none; /* Quitar el borde */
+    text-align: left; /* Asegura que el texto siga alineado a la izquierda */
+}
+
+
+#contact .contact-content {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espacio entre la imagen y el contenido */
+}
+
+#contact .contact-img {
+    width: 80px; /* Tamaño de la imagen */
+    height: 80px; /* Tamaño de la imagen */
+}
+
+#contact .contact-details {
+    flex: 3;
+}
+
+#contact .contact-title {
+    margin: 3;
+    font-size: 1.2em;
+}
+
+#contact .contact-description {
+    margin: 10px 9;
+    align-self: last baseline;
+}
+
+#contact .contact-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10;
+}
+
+/* Estilos generales para la subpágina de proyectos */
+.projects-main {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 10px; /* Espaciado entre tarjetas */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.project-inner {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Ajuste para tarjetas rectangulares */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .project-inner {
+    transform: rotateY(180deg);
+}
+
+.project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.project-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    max-height: 100%; /* Ajusta la altura máxima para mantener la proporción */
+    object-fit: cover; /* Ajusta el video para cubrir el contenedor sin distorsionarse */
+    border-radius: 8px;
+} 
+
+.project-back {
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    border-radius: 8px;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.project-image {
+    width: 100%; /* La imagen ocupará el ancho completo de la tarjeta */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+}
+
+.project-name {
+    margin: 5px 0;
+    font-size: 1rem; /* Tamaño de fuente para el nombre del proyecto */
+    color: #333;
+}
+
+.project-description {
+    color: #555;
+    font-size: 0.8rem; /* Tamaño de fuente para la descripción del proyecto */
+    margin-top: 3px;
+}
+
+/* Estilos para las tarjetas de video */
+.video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente el contenido */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px; /* Ajusta el padding para evitar que el contenido esté pegado a los márgenes */
+    margin: 10px; /* Opcional: Añade margen alrededor de las tarjetas */
+}
+
+.video-card .video-container {
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    overflow: hidden;
+}
+
+.video-card video {
+    width: 100%; /* El video ocupará el ancho completo de la tarjeta */
+    height: auto; /* Mantiene la proporción del video */
+    border-bottom: 1px solid #ddd; /* Línea separadora entre video y texto */
+}
+
+.video-card .video-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.video-card .video-title {
+    font-size: 1.5rem; /* Tamaño de fuente para el título del video */
+    color: #333;
+    margin: 0;
+}
+
+.video-card .video-description {
+    color: #555;
+    font-size: 1rem; /* Tamaño de fuente para la descripción del video */
+    margin-top: 10px;
+}
+
+
+/* Media Queries */
+
+/* Tablets y dispositivos de pantalla pequeña (menor a 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 10px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section {
+        padding: 40px 10px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en lugar de tres */
+    }
+
+    .project-card {
+        width: 100%; /* Ajusta el tamaño de las tarjetas para pantallas pequeñas */
+    }
+}
+
+/* Móviles (menor a 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .project-card {
+        margin: 10px 0; /* Espacio entre tarjetas en pantallas pequeñas */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Una columna en lugar de dos */
+    }
+
+    #contact .contact-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #contact .contact-img {
+        width: 60px;
+        height: 60px;
+    }
+}
